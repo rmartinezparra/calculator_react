@@ -1,0 +1,42 @@
+.bodyCalc {
+    width: auto;
+    margin: 0 auto;
+    align-items: center;
+
+}
+
+.calcbutton {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    background-color: #374151;
+    width: 100%;
+    min-width: 50px;
+    height: 100%;
+    min-height: 50px;
+    padding: 10px;
+}
+
+.buttonlittle {
+    border-radius: 50%;
+}
+
+.buttonbig {
+    border-radius: 30px;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    padding: 20px;
+}
+
+.calctotal {
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
