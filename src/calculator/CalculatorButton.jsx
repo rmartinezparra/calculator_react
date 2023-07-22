@@ -7,11 +7,14 @@ function CalculatorButton({id}) {
 
   return (
     <div>
-      {
-        id == 0 ? <button className="calcbutton buttonbig" onClick={ev => add(id)}>{id}</button>
+      {/*{
+        0 == id ? <button className="calcbutton buttonbig" onClick={ev => add(id)}>{id}</button>
                 : <button className="calcbutton buttonlittle" onClick={ev => add(id)}>{id}</button>
+      }*/}
+      {
+        id != 0 ? <button className="calcbutton buttonlittle" onClick={ev => add(id)}>{id}</button>
+                 : <button className="calcbutton buttonbig" onClick={ev => add(id)}>{id}</button>
       }
-
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function useCalculator() {
   const [total, setTotal] = useState("0");
+  const [sign, setSign] = useState();
   const [firstNum, setFirstNum] = useState(true);
 
   function add(id) {
@@ -32,11 +33,17 @@ function useCalculator() {
     setTotal(calc);
   }
 
+  function addSign(id) {
+    setSign(id);
+  }
+
   return {
     total,
+    sign,
     add,
     calcTotal,
-    removeNumber
+    removeNumber,
+    addSign
   }
 }
 

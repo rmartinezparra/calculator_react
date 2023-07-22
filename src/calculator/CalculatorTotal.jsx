@@ -3,11 +3,12 @@ import {CalculatorContext} from "../context/CalculatorContext.jsx";
 
 function CalculatorTotal() {
 
-  const { total } = useContext(CalculatorContext);
+  const { total, sign } = useContext(CalculatorContext);
 
   return (
-    <div>
-      <p className="calctotal">{total}</p>
+    <div className="containerTotal">
+      <span className="calctotal">{sign}</span>
+      <span className="calctotal">{total}</span>
     </div>
   );
 }

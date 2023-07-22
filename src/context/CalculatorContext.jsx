@@ -6,10 +6,10 @@ export const CalculatorContext = createContext();
 // eslint-disable-next-line react/prop-types
 export function CalculatorProvider({children}) {
 
-  const { total, add, calcTotal, removeNumber} = useCalculator();
+  const { total, sign, add, calcTotal, removeNumber, addSign} = useCalculator();
 
   return (
-    <CalculatorContext.Provider value={{total, add, calcTotal, removeNumber}}>
+    <CalculatorContext.Provider value={{total, sign, add, calcTotal, removeNumber, addSign}}>
       {children}
     </CalculatorContext.Provider>
   );
