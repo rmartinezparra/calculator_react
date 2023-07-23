@@ -1,6 +1,4 @@
 import CalculatorButton from "./CalculatorButton.jsx";
-import CalculatorButtonRemove from "./CalculatorButtonRemove.jsx";
-import CalculatorButtonTotal from "./CalculatorButtonTotal.jsx";
 import CalculatorButtonOperator from "./CalculatorButtonOperator.jsx";
 import CalculatorButtonFunction from "./CalculatorButtonFunction.jsx";
 
@@ -11,9 +9,9 @@ function CalculatorView() {
       <table>
         <tbody>
           <tr>
-            <td><CalculatorButtonRemove id={"AC"}/></td>
+            <td><CalculatorButtonFunction id={"AC"}/></td>
             <td><CalculatorButtonFunction id={"+/-"}/></td>
-            <td><CalculatorButtonFunction id={"%"}/></td>
+            <td><CalculatorButtonFunction id={"R"}/></td>
             <td><CalculatorButtonOperator id={"/"}/></td>
           </tr>
           <tr>
@@ -37,7 +35,7 @@ function CalculatorView() {
           <tr>
             <td colSpan="2"><CalculatorButton id={"0"}/></td>
             <td><CalculatorButton id={"."}/></td>
-            <td><CalculatorButtonTotal id={"="}/></td>
+            <td><CalculatorButtonOperator id={"="}/></td>
           </tr>
         </tbody>
       </table>

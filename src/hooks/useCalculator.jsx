@@ -1,9 +1,11 @@
-import { useState } from "react";
+import {useState} from "react";
 
 function useCalculator() {
+
   const [total, setTotal] = useState("0");
-  const [sign, setSign] = useState();
+  const [sign, setSign] = useState("");
   const [firstNum, setFirstNum] = useState(true);
+  const [operationTotal, setOperationTotal] = useState(0);
 
   function add(id) {
 
@@ -14,11 +16,6 @@ function useCalculator() {
     }
 
     setTotal(total.concat(id));
-  }
-
-  function calcTotal() {
-    let calc = parseFloat({total});
-    setTotal(calc.toString());
   }
 
   function removeNumber() {
@@ -34,16 +31,63 @@ function useCalculator() {
   }
 
   function addSign(id) {
+
+    const operation = calcOperation(sign, total);
+    setOperationTotal(operation);
+    setTotal("0");
+    setFirstNum(true);
     setSign(id);
+
+  }
+
+  function calcOperation(sign, total) {
+    let operation;
+    switch (sign) {
+      case "/":
+        operation = operationTotal / parseFloat(total);
+        break;
+      case "*":
+        operation = operationTotal * parseFloat(total);
+        break;
+      case "-":
+        operation = operationTotal - parseFloat(total);
+        break;
+      case "+":
+        operation = operationTotal + parseFloat(total);
+        break;
+      default:
+        operation = parseFloat(total);
+        break;
+    }
+    return operation;
+  }
+
+  function reset() {
+    setTotal("0");
+    setFirstNum(true);
+    setSign("");
+    setOperationTotal(0);
+  }
+
+  function calcTotal() {
+    const operation = calcOperation(sign, total);
+    reset();
+    setTotal(operation);
+/*    setTotal(operation);
+    setFirstNum(true);
+    setOperationTotal(0);
+    setSign("");*/
   }
 
   return {
     total,
     sign,
     add,
-    calcTotal,
     removeNumber,
-    addSign
+    addSign,
+    operationTotal,
+    reset,
+    calcTotal
   }
 }
 

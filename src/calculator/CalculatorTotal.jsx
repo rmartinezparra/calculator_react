@@ -7,7 +7,7 @@ function CalculatorTotal() {
 
   return (
     <div className="containerTotal">
-      <span className="calctotal">{sign}</span>
+      <span className="calctotal calcSign">{sign}</span>
       <span className="calctotal">{total}</span>
     </div>
   );
