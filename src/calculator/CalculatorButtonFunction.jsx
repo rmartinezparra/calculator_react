@@ -2,12 +2,12 @@ import {useContext} from "react";
 import {CalculatorContext} from "../context/CalculatorContext.jsx";
 
 function CalculatorButtonFunction({id}) {
-  const { add, removeNumber, reset } = useContext(CalculatorContext);
+  const { changeSign, removeNumber, reset } = useContext(CalculatorContext);
 
   let renderSwitch = () => {
     switch(id) {
       case "+/-":
-        return <button className="calcbutton buttonlittle buttonFunctions buttonFunc" onClick={ev => add({id})}>{id}</button>;
+        return <button className="calcbutton buttonlittle buttonFunctions buttonFunc" onClick={ev => changeSign()}>{id}</button>;
       case "AC":
         return <button className="calcbutton buttonlittle buttonFunctions" onClick={ev => removeNumber()}>{id}</button>;
       case "R":

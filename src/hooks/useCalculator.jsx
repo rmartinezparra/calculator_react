@@ -73,10 +73,16 @@ function useCalculator() {
     const operation = calcOperation(sign, total);
     reset();
     setTotal(operation);
-/*    setTotal(operation);
-    setFirstNum(true);
-    setOperationTotal(0);
-    setSign("");*/
+  }
+
+  function changeSign() {
+    let strTotal;
+    let parsedTotal = parseFloat(total);
+
+    if (Math.sign(parsedTotal) == 1 || Math.sign(parsedTotal) == -1) {
+      strTotal = (parsedTotal*-1).toString();
+      setTotal(strTotal);
+    }
   }
 
   return {
@@ -87,7 +93,8 @@ function useCalculator() {
     addSign,
     operationTotal,
     reset,
-    calcTotal
+    calcTotal,
+    changeSign
   }
 }
 
